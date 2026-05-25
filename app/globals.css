@@ -1,0 +1,217 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #0f172a; background: #f8fafc; }
+a { color: inherit; }
+.site { min-height: 100vh; }
+.container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+/* Header */
+.siteHeader {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e2e8f0;
+}
+.headerInner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 18px;
+  color: #0c4a6e;
+  letter-spacing: -0.02em;
+}
+.brand svg { color: #0369a1; }
+.siteNav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.siteNav a {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  color: #475569;
+  padding: 10px 14px;
+  border-radius: 12px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.siteNav a:hover,
+.siteNav a.active {
+  background: #f0f9ff;
+  color: #0369a1;
+}
+.navCta {
+  background: #0369a1 !important;
+  color: white !important;
+}
+.navCta:hover {
+  background: #075985 !important;
+}
+
+.hero { background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 55%, #fef3c7 100%); padding: 88px 0; overflow: hidden; }
+.heroCompact { padding: 72px 0 64px; }
+.heroGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.pill { display: inline-flex; align-items: center; gap: 8px; background: white; color: #0369a1; padding: 10px 16px; border-radius: 999px; font-size: 14px; font-weight: 700; box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08); margin-bottom: 20px; }
+h1 { font-size: clamp(48px, 7vw, 82px); line-height: 0.95; margin: 0; letter-spacing: -0.04em; }
+.pageTitle { font-size: clamp(40px, 5vw, 64px); }
+.subtitle { font-size: 22px; font-weight: 700; color: #334155; margin: 22px 0 0; }
+.copy { font-size: 18px; line-height: 1.7; color: #475569; max-width: 620px; margin: 24px 0 0; }
+.buttons { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 22px; border-radius: 18px; font-weight: 700; text-decoration: none; transition: transform 0.2s ease, background 0.2s ease; }
+.button:hover { transform: translateY(-2px); }
+.primary { background: #0369a1; color: white; box-shadow: 0 12px 28px rgba(3, 105, 161, 0.24); }
+.primary:hover { background: #075985; }
+.secondary { background: white; color: #075985; box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08); }
+.photoCard { min-height: 430px; border-radius: 34px; padding: 28px; display: flex; align-items: flex-end; color: white; background-image: linear-gradient(rgba(2,6,23,0.1), rgba(2,6,23,0.62)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80'); background-size: cover; background-position: center; box-shadow: 0 24px 70px rgba(15, 23, 42, 0.20); }
+.photoCardPortrait {
+  background-image: linear-gradient(rgba(2,6,23,0.15), rgba(2,6,23,0.55)), url('https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=1400&q=80');
+}
+.photoCard p { text-transform: uppercase; letter-spacing: .25em; font-size: 13px; margin: 0 0 10px; color: #e0f2fe; }
+.photoCard h2 { font-size: 34px; line-height: 1.12; margin: 0; }
+.section { padding: 72px 0; }
+.whiteSection { background: white; }
+.cardGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.card, .townCard, .detailCard { background: white; border: 1px solid #e2e8f0; border-radius: 28px; padding: 30px; box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05); }
+.card svg, .townCard svg, .detailCard svg { color: #0369a1; }
+.card h3, .townCard h3 { margin: 18px 0 10px; font-size: 24px; }
+.card p, .townCard p { color: #475569; margin: 0; line-height: 1.6; }
+.eyebrow { color: #0369a1; font-size: 13px; text-transform: uppercase; font-weight: 800; letter-spacing: .25em; margin: 0 0 10px; }
+.gold { color: #d97706; margin-top: 18px; }
+.sectionTitle { font-size: clamp(34px, 4vw, 48px); line-height: 1.05; margin: 0 0 34px; letter-spacing: -0.03em; }
+.townCard { display: block; text-decoration: none; background: #f8fafc; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+.townCard:hover { transform: translateY(-4px); background: #f0f9ff; box-shadow: 0 16px 36px rgba(15, 23, 42, 0.10); }
+.townCard strong { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; color: #0369a1; }
+.details { display: grid; gap: 28px; }
+.detailCard { display: grid; grid-template-columns: 1.3fr .8fr; gap: 36px; align-items: start; scroll-margin-top: 100px; }
+.detailCard h2 { font-size: 34px; line-height: 1.12; margin: 8px 0 18px; }
+.detailCard p { color: #475569; font-size: 18px; line-height: 1.7; margin: 0; }
+.highlightBox { background: #f8fafc; border-radius: 24px; padding: 24px; }
+.highlightBox h3 { margin: 0 0 14px; font-size: 22px; }
+.highlightBox ul { list-style: none; margin: 0; padding: 0; color: #334155; }
+.highlightBox li { display: flex; gap: 10px; align-items: flex-start; margin: 12px 0; }
+.highlightBox li svg { flex: 0 0 auto; color: #d97706; margin-top: 3px; }
+.cta { background: #0c4a6e; color: white; border-radius: 34px; padding: 44px; display: grid; grid-template-columns: .9fr 1.1fr; gap: 36px; align-items: center; }
+.cta svg { color: #fbbf24; }
+.cta h2 { font-size: 34px; line-height: 1.12; margin: 16px 0 0; }
+.cta p { color: #e0f2fe; font-size: 18px; line-height: 1.7; margin: 0; }
+.contact { background: #020617; color: white; }
+.contactGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start; }
+.contact .eyebrow { color: #7dd3fc; }
+.contact p { color: #cbd5e1; font-size: 18px; line-height: 1.7; }
+.contactCard { background: white; color: #0f172a; border-radius: 28px; padding: 30px; }
+.contactCard h3 { margin: 0; font-size: 28px; }
+.contactCard p { color: #64748b; margin: 6px 0 24px; }
+.contactCard a { display: flex; align-items: center; gap: 12px; background: #f8fafc; color: #0f172a; text-decoration: none; padding: 16px 18px; border-radius: 18px; margin-top: 12px; font-weight: 700; }
+.contactCard a:hover { background: #f0f9ff; color: #0369a1; }
+
+/* About Steve */
+.pullQuote {
+  background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 100%);
+  color: white;
+  border-radius: 34px;
+  padding: clamp(36px, 5vw, 56px);
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(3, 105, 161, 0.25);
+}
+.pullQuote svg { color: #fbbf24; margin-bottom: 20px; }
+.pullQuote blockquote {
+  margin: 0;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.45;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.pullQuote cite {
+  display: block;
+  margin-top: 24px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  color: #7dd3fc;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.storyGrid p {
+  color: #475569;
+  font-size: 18px;
+  line-height: 1.75;
+  margin: 0 0 18px;
+}
+.storyGrid p:last-child { margin-bottom: 0; }
+.statRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 8px;
+}
+.statCard {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 28px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+.statCard strong {
+  display: block;
+  font-size: clamp(36px, 4vw, 48px);
+  color: #0369a1;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.statCard span {
+  display: block;
+  margin-top: 10px;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+.experienceList {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+.experienceList li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  color: #334155;
+  font-size: 17px;
+  line-height: 1.6;
+}
+.experienceList li svg {
+  flex: 0 0 auto;
+  color: #0369a1;
+  margin-top: 3px;
+}
+
+@media (max-width: 850px) {
+  .headerInner { flex-direction: column; align-items: flex-start; }
+  .siteNav { width: 100%; }
+  .heroGrid, .cardGrid, .detailCard, .cta, .contactGrid, .storyGrid, .statRow { grid-template-columns: 1fr; }
+  .photoCard { min-height: 320px; }
+  .section, .hero { padding: 56px 0; }
+}
