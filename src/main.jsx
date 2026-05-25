@@ -1,12 +1,14 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { Home, Waves, MapPin, Phone, Mail, ArrowRight, Star, Umbrella, Building2, Utensils, Bike, Sailboat } from "lucide-react";
+import { Analytics } from "@vercel/analytics/react";
 import "./styles.css";
 
 function ShorePlusMoreWebsite() {
   return (
-    <main className="site">
-      <section className="hero">
+    <>
+      <main className="site">
+        <section className="hero">
         <div className="container heroGrid">
           <div className="heroText">
             <div className="pill"><Waves size={16} /> Ventnor • Margate • Longport</div>
@@ -106,7 +108,9 @@ function ShorePlusMoreWebsite() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+      <Analytics />
+    </>
   );
 }
 
